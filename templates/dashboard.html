@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'animfile.html' %}
+    <!-- {% for message in get_flashed_messages() %}
+        <div class="container alert alert-warning alert-dismissible fade show" role="alert">
+            {{ username }} {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %} -->
+
+
+
+<body class="bodybdn">
+  <!-- <div class="card">
+    <div class="card-header">
+        {{ current_user.username }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Welcome to your user dashboard!</h5>
+      <p class="card-text">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+            <strong>Username: </strong>{{ current_user.username }}<br>
+
+            <strong>User ID: </strong>{{ current_user.id }}<br>
+        
+            <strong>Email: </strong>{{ current_user.email }}<br>
+        
+            <strong>Date Joined: </strong>{{ current_user.date_added }}<br>
+          </p>
+          <a href="{{ url_for('logout') }}" class="btn btn-secondary btn-sm">Logout</a>
+          <a href="{{ url_for('delete', id=current_user.id) }}" class="btn btn-danger btn-sm">Delete Procfile</a>
+          <br><br>
+        </div>
+        <div class="col-4">
+          {% if current_user.profile_pic %}
+            <div class="photo">
+              <img src="{{ url_for('static', filename='imeges/' + current_user.profile_pic) }}" width="200" height="200"  align="right">
+            </div>
+          {% else %}
+            <img src="{{ url_for('static', filename='imeges/Defaultimg.png') }}" width="200" align="right">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="con container text-light">
+  <div class="row">
+    <div class="col-lg-8 col-md-12"> <!-- Встановлюємо розміри колонки для великих та середніх пристроїв -->
+      <strong>Username: </strong>{{ current_user.username }}<br>
+      <strong>User ID: </strong>{{ current_user.id }}<br>
+      <strong>Email: </strong>{{ current_user.email }}<br>
+      <strong>Date Joined: </strong>{{ current_user.date_added }}<br><br>
+      <a href="{{ url_for('logout') }}" class="btn btn-secondary btn-sm">Logout</a>
+      <a href="{{ url_for('delete', id=current_user.id) }}" class="btn btn-danger btn-sm">Delete Procfile</a>
+      <br><br>
+    </div>
+    <div class="col-lg-4 col-md-12"> <!-- Встановлюємо розміри колонки для великих та середніх пристроїв -->
+      {% if current_user.profile_pic %}
+        <div class="photo">
+          <img class="profile-pic-dash img-fluid" src="{{ url_for('static', filename='imeges/' + current_user.profile_pic) }}" alt="Profile Picture" width="200" height="100" align="right">
+        </div>
+      {% else %}
+        <div class="deficon">
+          <img src="{{ url_for('static', filename='imeges/defaulticondds.png') }}" class="img-fluid" alt="Default Profile Picture" width="200" align="right">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<br>
+
+      <br>
+      <br>
+      <br>  
+      <div class="container card">
+        <div class="card-header">
+            Update Procfile
+        </div>
+        <div class="container card-body">
+          <form action="/dashboard" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+    
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control", value=name_to_update.username) }}
+            <br>
+    
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control", value=name_to_update.email) }}
+            <br>
+
+            {{ form.profile_pic.label(class="form-label") }}
+            {{ form.profile_pic(class="form-control", value=name_to_update.profile_pic) }}
+    
+            <br>
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+<div class="container alert alert-warning alert-dismissible fade show" role="alert">
+    {{ username }} {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<body class="body_2">
+{% if username %}
+
+{% else %}
+
+        <!-- <table class="table table-hover table table-striped table table-bordered">
+            {% for our_user in our_users %}
+                <tr>
+                    <td>
+                        {{ our_user.id }}. <a href="#">{{ our_user.username }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table> -->
+        <div class="mt-7 p-3 mb-2 mt-6">
+            <br>
+            <br>
+            <form method="POST" action="{{ url_for('registration') }}">
+                {{ form.hidden_tag() }}
+
+                <h2 class="container">{{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control") }}</h2>
+                <br>
+
+                <h2 class="container">{{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control") }}</h2>
+                <br>
+
+                <h2 class="container">{{ form.password_hash.label(class="form-label") }}
+                {{ form.password_hash(class="form-control") }}</h2>
+                <br>
+
+                <h2 class="container">{{ form.password_hash2.label(class="form-label") }}
+                {{ form.password_hash2(class="form-control") }}</h2>
+                <br><br>
+                <div class="d-grid gap-5 d-md-flex justify-content-md-end ml-5">
+                    {{ form.submit(class="btn me-md-5 btn-outline-primary btn-lg") }}
+                </div>
+            </form>
+            <br><br>
+        </div>
+        <!-- <table class="table table-hover table table-striped table table-bordered">
+            {% for our_user in our_users %}
+                <tr>
+                    <td>
+                        {{ our_user.id }}. <a href="#">{{ our_user.username }}</a> 
+                        - {{ our_user.email }} 
+                        - PW: {{ our_user.password_hash }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table> -->
+    {% endif %}
+</body>
+{% endblock %}

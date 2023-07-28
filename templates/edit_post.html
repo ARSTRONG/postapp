@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+{% for message in get_flashed_messages() %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ current_user.username }} - {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<h2>Edit Posts...</h2>
+<br>
+
+<div class="shadow p-3 mb-5 bg-body rounded">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+        <br>
+
+        {{ form.content.label(class="form-label") }}
+        {{ form.content(class="form-control", rows="10") }}
+        <br>
+
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='content') }}
+</div>
+
+{% endblock %}

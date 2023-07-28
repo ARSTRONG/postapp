@@ -1,0 +1,319 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.contacts-item{
+    margin: 0;
+    color: aliceblue;
+}
+
+.contacts-number{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #a7a9ab;
+}
+
+.mr{
+  position: relative;
+  margin-left: 25px;
+}
+
+.Contact{
+  color: rgb(255, 255, 255);
+}
+
+.inc{
+  color: aliceblue;
+}
+
+.contacts-email{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2979FF;
+}
+
+.main_block{
+  position: relative;
+  background-color: #07252d;
+  margin-top: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.navbar{
+    position: fixed;
+    margin-bottom: 0;
+}
+
+.text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    color: aliceblue;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    top: 200px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.txt_2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    top: 270px;
+    margin-left: 50px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+}
+
+.header{
+    position: relative;
+    margin-left: 50px;
+}
+
+h2{
+    position: relative;
+    font-size: 6em;
+    letter-spacing: 15px;
+    color: #0e3742;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 30px;
+    /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0004); */
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 4s linear infinite;
+  }
+  
+  @keyframes animate {
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+      color: #0e3742;
+      text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+      color: #fff;
+      text-shadow: 0 0 10px #03bcf4,
+                  0 0 20px #03bcf4,
+                  0 0 40px #03bcf4,
+                  0 0 80px #03bcf4,
+                  0 0 160px #03bcf4;
+    }
+  }
+
+  /* @keyframes animate {
+    50%{
+      color: #0e3742;
+      text-shadow: none;
+    }
+    100%, 0%{
+    color: #0e3742;
+      text-shadow: 0 0 10px #03bcf4,
+                  0 0 20px #03bcf4,
+                  0 0 40px #03bcf4
+    }
+  } */
+
+h3{
+    position: relative;
+    font-size: 16em;
+    letter-spacing: 10px;
+    color: #0e3742;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 0.70em;
+    outline: none;
+}
+
+.contacts-item1{
+  margin: 0;
+  color: rgb(4, 4, 4);
+}
+
+.contacts-type1{
+  color: #a8a8a8;
+}
+
+.contacts-number1{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #4e5051;
+}
+
+/* .logout{
+  position: relative;
+  align-items: center;
+  text-align: center;
+  top: 100px;
+} */
+
+
+.body_2{
+  background-color: #07252d;
+  height: 150vh;
+}
+
+/* .photo{
+  position: relative;
+  width: 200px;
+  height: 50px;
+} */
+
+.nbr{
+  position: relative;
+  top: -155px;
+  margin: 0;
+  width: 100%;
+}
+
+.con{
+  position: absolute;
+  top: 300px;
+  left: 100px;
+}
+
+.profile-pic {
+  /* width: 200px;
+  height: 200px; */
+  top: -30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+@media (max-width: 1000px) {
+  .profile-pic-block {
+      display: none;
+  }
+}
+
+.profile-pic-dash {
+  /* width: 100px;
+  height: 100px; */
+  top: -30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bodybdn{
+  background: #07252d;
+  z-index: 1000;
+}
+
+.navbar{
+  z-index: 1000;
+}
+
+.card{
+  top: 400px;
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* Стилі для середніх пристроїв (з роздільною здатністю більше або рівно 700px, але менше 992px) */
+@media (min-width: 700px) and (max-width: 991px) {
+  /* .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  } */
+  .photo  {
+    position: absolute;
+    width: 150px;
+    left: 670px;
+    top: 30px
+  }
+
+  .con{
+    top: 250px;
+    left: 10px;
+  }
+
+  .bodybdn{
+    overflow-x: hidden;
+  }
+
+  /* Змінюємо стиль зображення фото на малих пристроях */
+  .profile-pic {
+    width: 50px;
+  }
+
+  .usernamecs{  
+    display: none;
+  }
+}
+
+/* Стилі для малих пристроїв (з роздільною здатністю більше або рівно 300px, але менше 700px) */
+@media (min-width: 300px) and (max-width: 699px) {
+  .photo {
+    position: absolute;
+    top: -150px;
+    left: 150px;
+    margin-bottom: 100px;
+    width: 100px;
+  }
+
+  .deficon{
+    position: absolute;
+    top: -150px;
+    left: 150px;
+    margin-bottom: 100px;
+    width: 100px;
+  }
+
+  .con{
+    top: 280px;
+    left: 5px;
+  }
+
+  .bodybdn{
+    overflow-x: hidden;
+  }
+
+  /* Змінюємо стиль зображення фото на малих пристроях */
+  .profile-pic {
+    width: 50px;
+  }
+
+  .usernamecs{
+    display: none;
+  }
+}
+
+/* Загальні стилі для фото */
+.photo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.password-cell {
+  max-width: 10%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10px;
+}

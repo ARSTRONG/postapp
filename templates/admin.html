@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<!-- {% for message in get_flashed_messages() %}
+<div class="container alert alert-warning alert-dismissible fade show" role="alert">
+    {{ post.poster.username }} - {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %} -->
+<br>
+
+    <h2>Admin Area</h2>
+    <p>Do some Admin-y type things here...</p>
+
+    <div class="table-responsive">
+        <table class="col-lg-50 col-md-50 col-sm-50 col-xs-50 table table-hover table table-striped table table-bordered">
+            {% for our_user in our_users %}
+                <tr>
+                    <td>
+                        {{ our_user.id }}. <a href="{{ url_for('update', id=our_user.id) }}">{{ our_user.username }}</a> 
+                        - {{ our_user.email }} 
+                        - PW: <span class="password-cell">{{ our_user.password_hash }}</span>
+                        - <a href="{{ url_for('delete', id=our_user.id) }}">Delete</a><br>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
