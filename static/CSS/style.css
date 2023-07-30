@@ -317,3 +317,38 @@ h3{
   text-overflow: ellipsis;
   font-size: 10px;
 }
+
+
+
+/* Стилі для середніх пристроїв (з роздільною здатністю більше або рівно 700px, але менше 992px) */
+@media (min-width: 700px) and (max-width: 991px) {
+  .txt_2{
+    position: absolute;
+    right: 40px;
+    font-size: 25px;
+    top: 400px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 699px) {
+  .text{
+    font-size: 40px;
+    left: 15px;
+  }
+
+  .txt_2{
+    font-size: 15px;
+    right: 13px;
+  }
+
+  .header{
+    letter-spacing: 5px;
+    font-size: 25px;
+    right: 20px;
+  }
+
+  .container{
+    letter-spacing: 5px;
+    font-size: 20px;
+  }
+}
